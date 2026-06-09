@@ -8,7 +8,7 @@
 <body>
 
 <form action = #>
-	USERNAME : <input type="text" class="username">
+	USERNAME : <input type="text" class="username" required>
 		<br>
 		MESSAGE : <input type="text" class="message" >
 		<button>Envoyer !</button>
@@ -34,7 +34,7 @@
 				console.log(message)
 				console.log(message)
 				let listItem = document.createElement("li");
-				listItem.innerHTML = message.username + ":"message.message+ "("+ message.time +")";
+				listItem.innerHTML = message.username + ":" + message.message+ "("+ message.time +")";
 				let list = document.querySelector("ul");
 				list.appendChild(listItem)
 			
@@ -55,7 +55,9 @@
 		 		"Content-Type" : "application/x-www-form-urlencoded"
 		 	},
 		 	body: "cle=ABCD123&username=" + username + "&texte=" + text
-		 });		 
+		 }).then(function () {location.reload();
+
+		});		 
 		}
 	</script>
 
